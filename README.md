@@ -27,3 +27,9 @@ The pin configurations in the code are interchangeable on
 The schematic was designed in KiCad using a custom HC-SR04 footprint/symbol. 
 If you're opening the `.kicad_sch`file and get missing library errors, you can:
 1. Download the library from [here](https://easyeda.com/component/f187369ca0be419ab766c123244e74c4)
+
+## Circuit Diagram
+![Circuit Diagram](CircuitDiagram.png)
+
+## Physical Product
+![Physical Robot](PhysicalRobot.jpeg)

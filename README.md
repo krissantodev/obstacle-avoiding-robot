@@ -16,10 +16,14 @@ The robot works by running a reactive program by detecting distance, when the ro
 - 2x 18650 Batteries(interchangeable with LiPo batteries or a far more powerful battery if you know what you're doing)
 - 2 Battery holder
 
-### **Note: The Servo.h library disables pin 9 and 10 for PWM uses. Configure the pins however you want but mind these restrictions.***
+**Note: The Servo.h library disables pin 9 and 10 for PWM uses. Configure the pins however you want but mind these restrictions.***
 
 The pin configurations in the code are interchangeable on
 - Supersonic  = line 3 & 4
 - DC motor = line 6-12
 - Servo = line 53
 
+## KiCad Schematic Notes
+The schematic was designed in KiCad using a custom HC-SR04 footprint/symbol. 
+If you're opening the `.kicad_sch`file and get missing library errors, you can:
+1. Download the library from [here](https://easyeda.com/component/f187369ca0be419ab766c123244e74c4)

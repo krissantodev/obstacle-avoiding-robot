@@ -16,12 +16,32 @@ The robot works by running a reactive program by detecting distance, when the ro
 - 2x 18650 Batteries(interchangeable with LiPo batteries or a far more powerful battery if you know what you're doing)
 - 2 Battery holder
 
-### **Note: The Servo.h library disables pin 9 and 10 for PWM uses. Configure the pins however you want but mind these restrictions.***
+## 🔌 Pin Connections
+
+| Component | Pin |
+|-----------|-----|
+| Left Motor Control (ENA) | 11 |
+| Left Motor Direction1 (IN1) | 12 |
+| Left Motor Direction2 (IN2)13 |
+| Right Motor (PWM) | 3 | 
+| Right Motor Direction1(IN3) | 7 | 
+| Right Motor Direction2(IN4)| 6 |
+| L298N VSS|Straight from battery|
+| Servo Power|Use a buck converter|
+| Servo Signal | 8 |
+|Ultrasonic VCC|5V Arduino|
+| Ultrasonic Trigger | 5 |
+| Ultrasonic Echo | 4 |
+| all Ground | GND |
+
+## Common Problems
+- **The Servo.h library disables pin 9 and 10 for PWM uses. Configure the pins however you want but mind these restrictions.***
+- **The Servo can't handle the 7.4V from the battery, I suggest using a buck converter so your Servo can operate safely.**
 
 The pin configurations in the code are interchangeable on
 - Supersonic  = line 3 & 4
 - DC motor = line 6-12
-- Servo = line 53
+- Servo = line 13
 
 ## KiCad Schematic Notes
 The schematic was designed in KiCad using a custom HC-SR04 footprint/symbol. 
@@ -31,5 +51,8 @@ If you're opening the `.kicad_sch`file and get missing library errors, you can:
 ## Circuit Diagram
 ![Circuit Diagram](CircuitDiagram.png)
 
-## Physical Product
+## Finished
 ![Physical Robot](PhysicalRobot.jpeg)
+
+## Robot working
+![Video](videoinaction.mp4)

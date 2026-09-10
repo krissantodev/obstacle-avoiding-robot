@@ -10,6 +10,7 @@ int IN4 = 6;
 int ENA = 11;
 int ENB = 3;
 int speed = 155;
+int Servopin = 8;
 
 long duration;
 int distance;
@@ -50,7 +51,7 @@ void setup() {
   Serial.begin(9600);
   stopMotor();
   
-  myServo.attach(8);
+  myServo.attach(Servopin);
   myServo.write(90);
   delay(500);  // Give servo time to reach position
 }
@@ -58,7 +59,7 @@ void setup() {
 void loop() {
   // Look forward
   myServo.write(90);
-  delay(800);  // IMPORTANT: Wait for servo to move
+  delay(500);  // IMPORTANT: Wait for servo to move
   
   int centerDistance = getDistance();
   Serial.print("Center: ");
@@ -87,29 +88,27 @@ void loop() {
     // Decision making
     if (leftDistance > rightDistance) {
       Serial.println("GO RIGHT (more space)");
-      delay(500);
+      delay(350);
       myServo.write(90);
-      delay(500);
+      delay(150);
       digitalWrite(IN1, HIGH);
       digitalWrite(IN2, LOW);
       analogWrite(ENA, 155);
       digitalWrite(IN3, HIGH);
       digitalWrite(IN4, LOW);
       analogWrite(ENB, 155);
-      delay(250);
       // Add turning left code here
     } else if (rightDistance > leftDistance) {
       Serial.println("GO LEFT (more space)");
-      delay(500);
+      delay(350);
       myServo.write(90);
-      delay(500);
+      delay(150);
       digitalWrite(IN1, LOW);
       digitalWrite(IN2, HIGH);
       analogWrite(ENA, 155);
       digitalWrite(IN3, LOW);
       digitalWrite(IN4, HIGH);
       analogWrite(ENB, 155);
-      delay(250);
     } else {
       Serial.println("GO BACK (same distance)");
     }

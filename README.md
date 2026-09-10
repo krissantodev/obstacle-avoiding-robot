@@ -54,5 +54,5 @@ If you're opening the `.kicad_sch`file and get missing library errors, you can:
 ## Finished
 ![Physical Robot](PhysicalRobot.jpeg)
 
-## Robot working
-![Video](videoinaction.mp4)
+## Demo
+[![Obstacle Avoidance Robot Demo](https://img.youtube.com/vi/EqztIPdeqT8/0.jpg)](https://www.youtube.com/shorts/EqztIPdeqT8)
